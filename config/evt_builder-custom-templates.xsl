@@ -53,4 +53,12 @@
             <xsl:text>(</xsl:text><xsl:apply-templates mode="#current"/><xsl:text>)</xsl:text>
         </xsl:element>
     </xsl:template>
+
+    <xsl:template match="tei:q" mode="interp dipl #default">
+		<xsl:element name="span">
+			<xsl:attribute name="class" select="'q'"/>
+			<xsl:call-template name="dataAttributesFromAttributes"/>
+			<xsl:text>&#171;</xsl:text><xsl:apply-templates mode="#current"/><xsl:text>&#187;</xsl:text>
+		</xsl:element>
+	</xsl:template>
 </xsl:stylesheet>
